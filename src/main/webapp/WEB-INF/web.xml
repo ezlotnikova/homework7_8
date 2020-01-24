@@ -1,7 +1,85 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+  <listener>
+    <listener-name>InitListener</listener-name>
+    <listener-class>com.gmail.zlotnikova.controller.InitListener</listener-class>
+  </listener>
+
+  <servlet>
+    <servlet-name>ShowUsersServlet</servlet-name>
+    <servlet-class>com.gmail.zlotnikova.controller.UsersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowUsersServlet</servlet-name>
+    <url-pattern>/users</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>add-user</servlet-name>
+    <jsp-file>/add-user.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>add-user</servlet-name>
+    <url-pattern>/add-user</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>NewUserServlet</servlet-name>
+    <servlet-class>com.gmail.zlotnikova.controller.NewUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewUserServlet</servlet-name>
+    <url-pattern>/new-user</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>update-address</servlet-name>
+    <jsp-file>/update-address.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>update-address</servlet-name>
+    <url-pattern>/update-address</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>NewAddressServlet</servlet-name>
+    <servlet-class>com.gmail.zlotnikova.controller.NewAddressServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewAddressServlet</servlet-name>
+    <url-pattern>/new-address</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>delete-user</servlet-name>
+    <jsp-file>/delete-user.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>delete-user</servlet-name>
+    <url-pattern>/delete-user</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>DeleteUserServlet</servlet-name>
+    <servlet-class>com.gmail.zlotnikova.controller.DeleteUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteUserServlet</servlet-name>
+    <url-pattern>/deleted</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
 </web-app>
+
